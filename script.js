@@ -1,14 +1,14 @@
-const container = document.querySelector(".container");
+const grid = document.querySelector(".grid");
 const gridSizeButton = document.querySelector(".grid-size");
 
 function createGrid(rows, cols, resetting = false) {
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  if (resetting == true) container.replaceChildren();
+  grid.style.setProperty('--grid-rows', rows);
+  grid.style.setProperty('--grid-cols', cols);
+  if (resetting) grid.replaceChildren();
 
   for (i = 0; i < (rows * cols); i++) {
     let cell = document.createElement("div");
-    container.appendChild(cell);
+    grid.appendChild(cell);
     cell.className = "grid-item";
   }
   addListeners();
