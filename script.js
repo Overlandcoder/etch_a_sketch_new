@@ -12,3 +12,10 @@ function createGrid(rows, cols) {
 }
 
 createGrid(8, 8);
+
+let cells = document.querySelectorAll(".grid-item");
+cells.forEach(cell => cell.addEventListener("mouseover", addBackgroundColor));
+
+function addBackgroundColor(cell) {
+  cell.target.style.backgroundColor = "#000";
+}
